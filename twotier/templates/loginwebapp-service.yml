@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  labels:
+    name: loginwebapp
+    app: loginwebapp
+spec:
+  selector:
+    app: loginwebapp
+  type: ClusterIP 
+  ports:
+   - port: 80
+     name: http
+     targetPort: 8080
+     protocol: TCP
+
